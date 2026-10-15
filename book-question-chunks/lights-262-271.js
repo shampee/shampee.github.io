@@ -1,0 +1,560 @@
+// PDF 262-269. Reviewed source text and the avbländning/kurva diagrams on
+// 266-268, including the worked "Testa dina kunskaper" example on 269-270,
+// which reuses the helljus-vid-spårbundet-trafikmedel concept from page 262
+// (see book-lights-t3, extended here). PDF 271 is the next unit's title
+// page ("Säkerhetskontroller" / book-safety-check), no content.
+export const LIGHTS_262_271_QUESTIONS = [
+  {
+    "id": "book-lights-q1",
+    "topic": "rules",
+    "kind": "Trafikregel",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [262],
+    "coverageIds": ["book-lights-t1"],
+    "title": "Förbjudna ljuskombinationer med halvljus",
+    "situation": "Vilken av följande ljuskombinationer är förbjuden?",
+    "options": [
+      "Halvljus + dimljus.",
+      "Halvljus + parkeringsljus.",
+      "Helljus + extraljus."
+    ],
+    "correct": 0,
+    "hint": "Vanligast är att halvljus i stället kombineras med parkeringsljus.",
+    "explanation": "Vanligast är att halvljus och parkeringsljus kombineras. Det finns dock förbjudna ljuskombinationer: halvljus + dimljus, halvljus + varselljus, halvljus + extraljus, samt dimljus + varselljus.",
+    "takeaway": "Halvljus får inte kombineras med dimljus, varselljus eller extraljus."
+  },
+  {
+    "id": "book-lights-q2",
+    "topic": "safety",
+    "kind": "Säkerhetsråd",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [262],
+    "coverageIds": ["book-lights-t2"],
+    "title": "Helljus som bilens starkaste belysning",
+    "situation": "Hur ofta rekommenderar boken att du använder helljus?",
+    "options": [
+      "Så ofta du kan när det är mörkt ute, eftersom helljus är bilens starkaste belysning.",
+      "Så sällan som möjligt, eftersom halvljus alltid räcker.",
+      "Bara på motorväg, aldrig på landsväg."
+    ],
+    "correct": 0,
+    "hint": "Begränsningarna gäller specifika situationer, inte en generell försiktighetsprincip.",
+    "explanation": "Helljus är bilens starkaste belysning. Använd helljus så ofta du kan när det är mörkt ute.",
+    "takeaway": "Helljus bör användas så mycket som möjligt i mörker, inom ramen för de situationer där det är förbjudet."
+  },
+  {
+    "id": "book-lights-q3",
+    "topic": "rules",
+    "kind": "Trafikregel",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [262, 269, 270],
+    "coverageIds": ["book-lights-t3"],
+    "title": "Helljus vid möte med spårbundet trafikmedel",
+    "situation": "Måste du slå av helljuset när du möter ett tåg?",
+    "options": [
+      "Ja, om risk för bländning kan uppstå.",
+      "Nej, eftersom bilstrålkastare inte kan påverka tågföraren.",
+      "Ja, men bara om tåget kör i mer än 100 km/h."
+    ],
+    "correct": 0,
+    "hint": "Tågföraren behöver god sikt över spåret, till exempel för att upptäcka ett djur.",
+    "explanation": "Trafikförordningen: ”Helljus får inte användas […] vid möte med ett spårbundet trafikmedel […] om risk för bländning kan uppstå”. Tågföraren måste se spåret — kanske står det en älg längre fram — och behöver då god sikt för att kunna nödbromsa.",
+    "takeaway": "Helljusförbudet vid möte gäller inte bara andra bilar, utan även tåg, spårvagn och fartyg."
+  },
+  {
+    "id": "book-lights-q4",
+    "topic": "rules",
+    "kind": "Trafikregel",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [262],
+    "coverageIds": ["book-lights-t4"],
+    "title": "Helljus bakom ett annat fordon",
+    "situation": "Varför är det förbjudet att använda helljus när du ligger nära bakom ett annat fordon?",
+    "options": [
+      "Föraren i framförvarande fordon kan bländas genom backspeglarna.",
+      "Det sliter onödigt mycket på helljusets lampor.",
+      "Det är bara förbjudet om det framförvarande fordonet är en lastbil."
+    ],
+    "correct": 0,
+    "hint": "Ljuset träffar inte föraren direkt, utan via ett annat håll.",
+    "explanation": "Det är förbjudet att använda helljus när du ligger nära bakom ett annat fordon (föraren kan bländas genom speglarna).",
+    "takeaway": "Helljus bakom ett fordon bländar föraren indirekt, via backspeglarna."
+  },
+  {
+    "id": "book-lights-q5",
+    "topic": "safety",
+    "kind": "Säkerhetsprincip",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [262],
+    "coverageIds": ["book-lights-t5"],
+    "title": "Helljus och gående",
+    "situation": "Måste du blända av för gående på samma sätt som för mötande fordon?",
+    "options": [
+      "Nej, du behöver inte blända av för gående — fotgängare kan lätt undvika att bli bländade genom att titta bort, och med helljus ser du dem bättre, vilket är viktigt ur säkerhetssynpunkt.",
+      "Ja, exakt samma regler gäller för gående som för mötande fordon.",
+      "Nej, eftersom gående aldrig kan bli bländade av billyktor."
+    ],
+    "correct": 0,
+    "hint": "En gående kan själv enkelt undvika att titta rakt mot lyktorna.",
+    "explanation": "Du behöver inte blända av för gående. Fotgängare kan nämligen lätt undvika att bli bländade genom att titta bort. Med helljus på ser du fotgängaren eller fotgängarna bättre, vilket är viktigt ur säkerhetssynvinkel.",
+    "takeaway": "Gående kan själva undvika bländning, och helljus hjälper dig i stället att se dem bättre."
+  },
+  {
+    "id": "book-lights-q6",
+    "topic": "safety",
+    "kind": "Säkerhetsråd",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [263],
+    "coverageIds": ["book-lights-t6"],
+    "title": "Helljus vid en korsning med mycket trafik",
+    "situation": "Du närmar dig en korsning med mycket trafik i mörker. Vad är bra att göra med helljuset?",
+    "options": [
+      "Stänga av det, eftersom du annars riskerar att blända den korsande trafiken.",
+      "Alltid ha det kvar påslaget för bästa sikt in i korsningen.",
+      "Blinka med det för att varna korsande trafik om din närvaro."
+    ],
+    "correct": 0,
+    "hint": "Ljuset kan träffa flera olika håll i en korsning med mycket trafik.",
+    "explanation": "Närmar du dig en korsning med mycket trafik, kan det vara bra att stänga av helljuset eftersom du annars riskerar att blända den korsande trafiken.",
+    "takeaway": "Stäng av helljuset inför en trafiktät korsning för att inte blända korsande trafik."
+  },
+  {
+    "id": "book-lights-q7",
+    "topic": "safety",
+    "kind": "Säkerhetsråd",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [263],
+    "coverageIds": ["book-lights-t7"],
+    "title": "Möte med lastbil i ett backkrön",
+    "situation": "Du möter en lastbil i ett backkrön i mörker. När bör du blända av?",
+    "options": [
+      "Så fort du ser positionsljusen på taket, eftersom förarhytten är placerad högt i förhållande till personbilar.",
+      "Du behöver inte blända av extra tidigt för lastbilar jämfört med personbilar.",
+      "Först när hela lastbilen är synlig över krönet."
+    ],
+    "correct": 0,
+    "hint": "Lastbilens förare sitter högre upp och syns därför tidigare än resten av fordonet.",
+    "explanation": "Möter du en lastbil i ett backkrön ska du blända av så fort du ser positionsljusen på taket, eftersom förarhytten är placerad högt i förhållande till personbilar.",
+    "takeaway": "Lastbilens höga förarhytt syns tidigare än själva fordonet, så blända av tidigare än vid en vanlig personbilsmöte."
+  },
+  {
+    "id": "book-lights-q8",
+    "topic": "safety",
+    "kind": "Säkerhetsråd",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [263],
+    "coverageIds": ["book-lights-t8"],
+    "title": "Helljus i kraftig dimma eller snöfall",
+    "situation": "Du kör i kraftig dimma eller snöfall och tycker att sikten är dålig trots helljus. Vad kan du testa?",
+    "options": [
+      "Slå om till halvljus för att se om sikten förbättras.",
+      "Lägga till extraljus utöver helljuset för maximal styrka.",
+      "Blinka växelvis mellan helljus och helljus med extraljus."
+    ],
+    "correct": 0,
+    "hint": "Starkare ljus kan ibland reflekteras tillbaka mot dig i dimma eller snö.",
+    "explanation": "Helljus gör oftast att du ser bättre. Ibland kan det dock vara tvärtom. Om du kör i kraftig dimma eller snöfall, testa att slå om till halvljus för att se om sikten förbättras.",
+    "takeaway": "I dimma eller snöfall kan halvljus ibland ge bättre sikt än helljus."
+  },
+  {
+    "id": "book-lights-q9",
+    "topic": "safety",
+    "kind": "Säkerhetsråd",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [263],
+    "coverageIds": ["book-lights-t9"],
+    "title": "Att undvika att själv bli bländad vid möte",
+    "situation": "Du får möte i mörker och vill undvika att bli bländad av den mötande bilens lyktor. Vad rekommenderar boken?",
+    "options": [
+      "Fäst blicken längs högerkanten av vägen.",
+      "Fäst blicken rakt mot den mötande bilens lyktor.",
+      "Blunda helt tills bilarna har passerat varandra."
+    ],
+    "correct": 0,
+    "hint": "Du behöver fortfarande kunna se vägen framför dig, bara inte lyktorna.",
+    "explanation": "För att undvika att själv bli bländad av mötande bilar, fäst blicken längs högerkanten av vägen när du får möte i mörker.",
+    "takeaway": "Rikta blicken mot högerkanten av vägen, inte mot den mötande bilens lyktor, för att undvika bländning."
+  },
+  {
+    "id": "book-lights-q10",
+    "topic": "rules",
+    "kind": "Trafikregel",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [263],
+    "coverageIds": ["book-lights-t10"],
+    "title": "När blinkers ska användas",
+    "situation": "Vilket av följande räknar boken INTE som ett tillfälle då blinkers ska användas?",
+    "options": [
+      "Vid full fart på en rak landsväg, utan att ändra körfält eller riktning.",
+      "Vid att svänga höger eller vänster, byta körfält eller vända runt.",
+      "Vid att starta från vägkanten, eller i övrigt förflytta fordonet i sidled på ett märkbart sätt."
+    ],
+    "correct": 0,
+    "hint": "Blinkers signalerar en förändring i fordonets riktning eller position, inte rak körning.",
+    "explanation": "Blinkers ska användas när du ska: svänga höger eller vänster, byta körfält, vända runt, starta från vägkanten, eller i övrigt förflytta fordonet i sidled på ett märkbart sätt.",
+    "takeaway": "Blinkers signalerar alltid en kommande riktnings- eller positionsförändring."
+  },
+  {
+    "id": "book-lights-q11",
+    "topic": "rules",
+    "kind": "Säkerhetsprincip",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [263],
+    "coverageIds": ["book-lights-t11"],
+    "title": "Blinkers vid fortsatt körning på huvudled",
+    "situation": "Du kör på en huvudled och ser ett vägmärke som visar att huvudleden gör en sväng. Du ska fortsätta till höger, i huvudledens riktning. Måste du ändå blinka?",
+    "options": [
+      "Ja, du måste visa de andra trafikanterna vad du tänker göra.",
+      "Nej, eftersom du bara följer huvudledens egen sträckning.",
+      "Nej, blinkers krävs bara vid byte till en annan väg, inte vid huvudledens egna svängar."
+    ],
+    "correct": 0,
+    "hint": "Andra trafikanter vid korsningen vet inte automatiskt vilken väg huvudleden tar.",
+    "explanation": "Jag kör på en huvudled och ser detta märke. Måste jag blinka om jag ska fortsätta till höger? Ja, du måste visa de andra trafikanterna vad du tänker göra.",
+    "takeaway": "Blinkers krävs även när du bara följer huvudledens egen svängande sträckning."
+  },
+  {
+    "id": "book-lights-q12",
+    "topic": "rules",
+    "kind": "Säkerhetsprincip",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [263],
+    "coverageIds": ["book-lights-t12"],
+    "title": "Blinkers i ett körfält med pilmarkering",
+    "situation": "Du placerar dig i ett vänstersvängande körfält som redan har en pil målad på vägbanan. Måste du ändå blinka vänster när du svänger?",
+    "options": [
+      "Ja, eftersom de mötande trafikanterna inte ser pilarna i marken.",
+      "Nej, pilen i marken ersätter behovet av att blinka.",
+      "Nej, blinkers behövs bara i körfält utan pilmarkering."
+    ],
+    "correct": 0,
+    "hint": "Pilen är målad på vägbanan och syns bara ur ett visst perspektiv.",
+    "explanation": "Jag placerar mig i vänster körfält. Måste jag blinka vänster när jag svänger? Ja, de mötande ser inte pilarna i marken.",
+    "takeaway": "En markerad pil i vägbanan ersätter inte kravet på att blinka — mötande trafikanter ser den inte."
+  },
+  {
+    "id": "book-lights-q13",
+    "topic": "rules",
+    "kind": "Begrepp",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [264],
+    "coverageIds": ["book-lights-t13"],
+    "title": "Varningsblinkers",
+    "situation": "Vad är skillnaden mellan varningsblinkers och vanliga blinkers?",
+    "options": [
+      "Varningsblinkers använder samma lampor som vanliga blinkers, men skillnaden är att alla lampor blinkar samtidigt.",
+      "Varningsblinkers är gula medan vanliga blinkers är röda.",
+      "Varningsblinkers kräver en separat strömkälla jämfört med vanliga blinkers."
+    ],
+    "correct": 0,
+    "hint": "Tekniskt är det samma lampor, bara mönstret som skiljer.",
+    "explanation": "Varningsblinkers ska användas vid nödstopp och liknande. Varningsblinkers använder samma lampor som vanliga blinkers. Skillnaden är att alla lampor blinkar samtidigt.",
+    "takeaway": "Varningsblinkers tänder alla blinkerslampor samtidigt, för nödstopp och liknande situationer."
+  },
+  {
+    "id": "book-lights-q14",
+    "topic": "rules",
+    "kind": "Trafikregel",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [264],
+    "coverageIds": ["book-lights-t14"],
+    "title": "Dimljus i stället för halvljus",
+    "situation": "Får du använda dimljus i stället för halvljus, och får du kombinera de två?",
+    "options": [
+      "Det är tillåtet att använda dimljus i stället för halvljus vid dagsljus, men aldrig att kombinera de två.",
+      "Det är alltid tillåtet att kombinera dimljus och halvljus, oavsett tid på dygnet.",
+      "Dimljus får aldrig ersätta halvljus, varken dag eller natt."
+    ],
+    "correct": 0,
+    "hint": "Dimljuset ger ett starkare sken än halvljuset och är extra effektivt i dimma.",
+    "explanation": "Det främre dimljuset ger ifrån sig ett starkare sken än halvljuset och är därför extra effektivt i dimma. Det är tillåtet att använda dimljus i stället för halvljus vid dagsljus, men aldrig att kombinera de två.",
+    "takeaway": "Dimljus kan ersätta halvljus vid dagsljus, men de två får aldrig vara på samtidigt."
+  },
+  {
+    "id": "book-lights-q15",
+    "topic": "rules",
+    "kind": "Trafikregel",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [264],
+    "coverageIds": ["book-lights-t15"],
+    "title": "Dimljus i mörker",
+    "situation": "I mörker, när är det tillåtet att ersätta halvljuset med dimljus?",
+    "options": [
+      "Endast om det är dimma eller regnar kraftigt.",
+      "När som helst i mörker, utan särskilt väderkrav.",
+      "Aldrig — i mörker måste halvljus alltid användas i stället för dimljus."
+    ],
+    "correct": 0,
+    "hint": "Samma väderförhållande som gör dimljuset extra effektivt är villkoret.",
+    "explanation": "I mörker är det endast tillåtet att ersätta halvljus med dimljus om det är dimma eller regnar kraftigt.",
+    "takeaway": "Dimljus ersätter halvljus i mörker bara vid dimma eller kraftigt regn."
+  },
+  {
+    "id": "book-lights-q16",
+    "topic": "safety",
+    "kind": "Säkerhetsråd",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [264],
+    "coverageIds": ["book-lights-t16"],
+    "title": "Dimbakljus",
+    "situation": "Vad är dimbakljuset, och när ska det släckas?",
+    "options": [
+      "En mycket stark röd lampa som används när sikten är kraftigt försämrad, för att bakomvarande fordon ska se dig tydligt; den är bländande och ska släckas så fort du bedömer att bakomvarande fordon har sett dig.",
+      "En svagt lysande vit lampa som alltid ska vara på i mörker, oavsett sikt.",
+      "En gul lampa som bara används vid parkering."
+    ],
+    "correct": 0,
+    "hint": "Lampan är stark nog att den själv kan bländas andra förare om den lämnas på för länge.",
+    "explanation": "Dimbakljuset är en mycket stark röd lampa som används för att bakomvarande fordon ska se dig tydligt då sikten är kraftigt försämrad. Dimbakljuset är bländande, så det ska släckas så fort du bedömer att bakomvarande fordon har sett dig.",
+    "takeaway": "Dimbakljuset är kraftfullt och bländande — använd det bara så länge det behövs för att synas."
+  },
+  {
+    "id": "book-lights-q17",
+    "topic": "rules",
+    "kind": "Trafikregel",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [264],
+    "coverageIds": ["book-lights-t17"],
+    "title": "Varselljus",
+    "situation": "Vad är varselljus till för, och får det kombineras med halvljus eller dimljus?",
+    "options": [
+      "Varselljus är till för att bilen ska synas, och kan användas i stället för halvljus vid dagsljus och bra sikt — men att kombinera varselljus med halvljus eller dimljus är förbjudet.",
+      "Varselljus är till för att se vägen bättre i mörker, och ska alltid kombineras med halvljus.",
+      "Varselljus ersätter bromsljuset och tänds bara vid inbromsning."
+    ],
+    "correct": 0,
+    "hint": "Syftet är att synas för andra, inte att själv se bättre.",
+    "explanation": "Varselljus är till för att bilen ska synas. När det är dagsljus och bra sikt kan varselljus användas i stället för halvljus. Att kombinera varselljus med halvljus eller dimljus är förbjudet.",
+    "takeaway": "Varselljus handlar om att synas, inte att se — och får inte kombineras med halvljus eller dimljus."
+  },
+  {
+    "id": "book-lights-q18",
+    "topic": "rules",
+    "kind": "Begrepp",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [265],
+    "coverageIds": ["book-lights-t18"],
+    "title": "Kurvljus och fjärrljus",
+    "situation": "Vad är skillnaden mellan extraljusens två typer, kurvljus och fjärrljus?",
+    "options": [
+      "Kurvljus lyser upp nära bilen så att du ser bra längs kanterna; fjärrljus lyser smalt framåt så att du ser vad som händer längre fram.",
+      "Kurvljus lyser smalt framåt; fjärrljus lyser upp nära bilen.",
+      "De är två namn för exakt samma funktion."
+    ],
+    "correct": 0,
+    "hint": "Namnen beskriver var ljuset är riktat: nära kanterna eller långt fram.",
+    "explanation": "Extraljus kan monteras på bilen för att förstärka helljuset. Det finns två typer: kurvljus lyser upp nära bilen, så att du ser bra längs kanterna; fjärrljus lyser smalt framåt, så att du ser vad som händer längre fram.",
+    "takeaway": "Kurvljus belyser närområdet och kanterna; fjärrljus belyser långt fram i en smal stråle."
+  },
+  {
+    "id": "book-lights-q19",
+    "topic": "safety",
+    "kind": "Begrepp",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [265],
+    "coverageIds": ["book-lights-t19"],
+    "title": "Parkeringsljus",
+    "situation": "När ska parkeringsljus användas, och hur mycket ström drar det?",
+    "options": [
+      "När du stannar eller parkerar bilen vid dålig sikt, så att andra trafikanter ser bilen; parkeringsljuset är strömsnålt och kan i regel vara på i många timmar utan att tömma batteriet.",
+      "Endast när bilen körs i full fart på motorväg i mörker.",
+      "Parkeringsljuset drar lika mycket ström som helljuset och bör därför undvikas vid längre stopp."
+    ],
+    "correct": 0,
+    "hint": "Namnet beskriver exakt när ljuset är till för att användas.",
+    "explanation": "Parkeringsljus ska användas när du stannar eller parkerar bilen vid dålig sikt. Detta för att andra trafikanter ska se bilen. Parkeringsljuset är strömsnålt och kan i regel vara på i många timmar utan att batteriet töms.",
+    "takeaway": "Parkeringsljuset är gjort för att kunna lämnas på länge utan att tömma batteriet."
+  },
+  {
+    "id": "book-lights-q20",
+    "topic": "rules",
+    "kind": "Begrepp",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [265],
+    "coverageIds": ["book-lights-t20"],
+    "title": "Bromsljus jämfört med bakljus",
+    "situation": "Hur skiljer sig bromsljuset från det vanliga bakljuset i styrka?",
+    "options": [
+      "Bromsljuset lyser alltid starkare än bakljuset.",
+      "Bromsljuset och bakljuset lyser alltid med exakt samma styrka.",
+      "Bakljuset lyser starkare än bromsljuset, för att synas på långt håll."
+    ],
+    "correct": 0,
+    "hint": "Bromsljuset måste tydligt märkas ut från det vanliga bakljuset.",
+    "explanation": "Bakljus: minst två röda lampor. Bromsljus: röda lampor som tänds när bromspedalen trycks ner. Bromsljuset lyser alltid starkare än bakljuset.",
+    "takeaway": "Bromsljuset är starkare än bakljuset, så att en inbromsning tydligt syns för bakomvarande."
+  },
+  {
+    "id": "book-lights-q21",
+    "topic": "rules",
+    "kind": "Begrepp",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [265],
+    "coverageIds": ["book-lights-t21"],
+    "title": "Backljus och skyltlykta",
+    "situation": "Vilken färg har backljuset, och hur fungerar skyltlyktan?",
+    "options": [
+      "Backljuset är en vit lampa som tänds när du lägger i backen; skyltlyktan tänds automatiskt och lyser upp registreringsskylten.",
+      "Backljuset är en röd lampa som tänds vid bromsning; skyltlyktan måste tändas manuellt av föraren.",
+      "Backljuset är gult och skyltlyktan är samma sak som bromsljuset."
+    ],
+    "correct": 0,
+    "hint": "Backljusets vita färg skiljer det tydligt från de röda bak- och bromsljusen.",
+    "explanation": "Backljus: vit lampa som tänds när du lägger i backen. Skyltlykta: tänds automatiskt och lyser upp registreringsskylten.",
+    "takeaway": "Backljuset är vitt och manuellt kopplat till backväxeln; skyltlyktan är automatisk."
+  },
+  {
+    "id": "book-lights-q22",
+    "topic": "safety",
+    "kind": "Säkerhetsprincip",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [266, 267],
+    "coverageIds": ["book-lights-t22"],
+    "title": "Korrekt avbländning vid möte",
+    "situation": "I vilket ögonblick ska du slå tillbaka till helljus efter att ha bländat av vid ett möte i mörker?",
+    "options": [
+      "Precis i mötesögonblicket, när bilarna passerar varandra.",
+      "Direkt efter att du har bländat av, utan att vänta.",
+      "Först flera sekunder efter att den mötande bilen har passerat."
+    ],
+    "correct": 0,
+    "hint": "Vänta tills bilarna faktiskt möts på vägen.",
+    "explanation": "Korrekt avbländning vid möte: 1) Kör med helljuset så länge du kan. 2) När helljusen möts på vägen, eller när du känner att du blir bländad av den andra bilen, är det dags att slå om till halvljus. 3) Precis i mötesögonblicket slår du över till helljus igen.",
+    "takeaway": "Slå tillbaka till helljus exakt när bilarna möts, inte tidigare och inte senare."
+  },
+  {
+    "id": "book-lights-q23",
+    "topic": "safety",
+    "kind": "Säkerhetsprincip",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [267],
+    "coverageIds": ["book-lights-t23"],
+    "title": "Korrekt avbländning vid omkörning",
+    "situation": "Du kör om ett fordon i mörker. Vem ska slå av helljuset efter att omkörningen är klar, för att undvika att blända dig?",
+    "options": [
+      "Det är den omkörda bilen som ska slå av sitt helljus för att inte blända dig.",
+      "Det är du som nyss körde om som ska hålla ditt helljus avslaget resten av resan.",
+      "Ingen av bilarna behöver tänka på helljuset efter en avslutad omkörning."
+    ],
+    "correct": 0,
+    "hint": "Rollerna byts om jämfört med mötesscenariot — nu är det bilen bakom som nyss blev omkörd.",
+    "explanation": "Korrekt avbländning vid omkörning: 1) Kör med helljuset så länge du kan. 2) När du kommer nära bilen som du ska köra om är det dags att blända av. 3) Precis i omkörningsögonblicket slår du om till helljus igen. 4) Nu är det den omkörda bilen som ska slå av helljuset för att inte blända dig.",
+    "takeaway": "Efter en omkörning är det den omkörda bilens ansvar att inte blända den omkörande bilen med sitt helljus."
+  },
+  {
+    "id": "book-lights-q24",
+    "topic": "safety",
+    "kind": "Säkerhetsprincip",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [268],
+    "coverageIds": ["book-lights-t24"],
+    "title": "Helljus i en kurva",
+    "situation": "Två bilar, A och B, närmar sig varandra i en kurva i mörker. Varför måste bil A slå av helljuset snabbare än bil B?",
+    "options": [
+      "Bil A:s ljusstrålar pekar mot B i kurvan, medan B:s ljusstrålar ännu pekar bort från A.",
+      "Bil A kör fortare än bil B, vilket alltid kräver tidigare avbländning.",
+      "Det finns ingen skillnad, båda bilarna ska blända av exakt samtidigt i en kurva."
+    ],
+    "correct": 0,
+    "hint": "Kurvans form gör att ljuskäglorna pekar åt olika håll beroende på var i kurvan respektive bil befinner sig.",
+    "explanation": "I denna kurva måste bil A slå av helljuset snabbt för att inte blända B. Bil B kan däremot ha på helljuset längre, eftersom ljusstrålarna pekar bort från A.",
+    "takeaway": "I en kurva avgör ljuskäglans riktning, inte bara avståndet, när respektive bil måste blända av."
+  },
+  {
+    "id": "book-lights-q25",
+    "topic": "safety",
+    "kind": "Begrepp",
+    "source": "book",
+    "chapterId": "vehicle",
+    "bookUnitId": "book-lights",
+    "bookPages": [268],
+    "coverageIds": ["book-lights-t25"],
+    "title": "Synlighet för gående i mörker",
+    "situation": "På vilket avstånd upptäcks en gående i mörka kläder utan reflex med helljus, jämfört med en gående som bär reflex, också med helljus?",
+    "options": [
+      "150 meter utan reflex, jämfört med 450 meter med reflex.",
+      "25 meter utan reflex, jämfört med 60 meter med reflex.",
+      "300 meter utan reflex, jämfört med 125 meter med reflex."
+    ],
+    "correct": 0,
+    "hint": "Reflexen gör den allra största skillnaden av alla faktorer boken listar.",
+    "explanation": "Synlighet i mörker för gående, med helljus: mörka kläder utan reflex 150 m, ljusa kläder utan reflex 300 m, med reflex 450 m (med halvljus: 25 m, 60 m respektive 125 m).",
+    "takeaway": "En reflex ökar synligheten dramatiskt — upp till tre gånger längre avstånd jämfört med mörka kläder utan reflex."
+  }
+];
+
+export const LIGHTS_262_271_COVERAGE = [
+  { id: "book-lights-t1", bookUnitId: "book-lights", pages: [262], label: "Förbjudna ljuskombinationer med halvljus", questionIds: ["book-lights-q1"], visualStatus: "not-needed" },
+  { id: "book-lights-t2", bookUnitId: "book-lights", pages: [262], label: "Helljus bilens starkaste belysning", questionIds: ["book-lights-q2"], visualStatus: "not-needed" },
+  { id: "book-lights-t3", bookUnitId: "book-lights", pages: [262, 269, 270], label: "Helljusförbud vid möte, inklusive spårbundet trafikmedel", questionIds: ["book-lights-q3"], visualStatus: "not-needed" },
+  { id: "book-lights-t4", bookUnitId: "book-lights", pages: [262], label: "Helljusförbud bakom ett annat fordon", questionIds: ["book-lights-q4"], visualStatus: "not-needed" },
+  { id: "book-lights-t5", bookUnitId: "book-lights", pages: [262], label: "Ingen avbländning krävs för gående", questionIds: ["book-lights-q5"], visualStatus: "not-needed" },
+  { id: "book-lights-t6", bookUnitId: "book-lights", pages: [263], label: "Stäng av helljus vid trafiktät korsning", questionIds: ["book-lights-q6"], visualStatus: "not-needed" },
+  { id: "book-lights-t7", bookUnitId: "book-lights", pages: [263], label: "Blända av tidigt för lastbil i backkrön", questionIds: ["book-lights-q7"], visualStatus: "not-needed" },
+  { id: "book-lights-t8", bookUnitId: "book-lights", pages: [263], label: "Testa halvljus i dimma eller snöfall", questionIds: ["book-lights-q8"], visualStatus: "not-needed" },
+  { id: "book-lights-t9", bookUnitId: "book-lights", pages: [263], label: "Blicken längs högerkanten vid möte", questionIds: ["book-lights-q9"], visualStatus: "not-needed" },
+  { id: "book-lights-t10", bookUnitId: "book-lights", pages: [263], label: "Tillfällen då blinkers ska användas", questionIds: ["book-lights-q10"], visualStatus: "not-needed" },
+  { id: "book-lights-t11", bookUnitId: "book-lights", pages: [263], label: "Blinkers krävs även på huvudledens egna svängar", questionIds: ["book-lights-q11"], visualStatus: "not-needed" },
+  { id: "book-lights-t12", bookUnitId: "book-lights", pages: [263], label: "Blinkers krävs trots pilmarkering i vägbanan", questionIds: ["book-lights-q12"], visualStatus: "not-needed" },
+  { id: "book-lights-t13", bookUnitId: "book-lights", pages: [264], label: "Varningsblinkers blinkar samtidigt", questionIds: ["book-lights-q13"], visualStatus: "not-needed" },
+  { id: "book-lights-t14", bookUnitId: "book-lights", pages: [264], label: "Dimljus i stället för halvljus, aldrig båda", questionIds: ["book-lights-q14"], visualStatus: "not-needed" },
+  { id: "book-lights-t15", bookUnitId: "book-lights", pages: [264], label: "Dimljus i mörker kräver dimma eller kraftigt regn", questionIds: ["book-lights-q15"], visualStatus: "not-needed" },
+  { id: "book-lights-t16", bookUnitId: "book-lights", pages: [264], label: "Dimbakljus är starkt och ska släckas snabbt", questionIds: ["book-lights-q16"], visualStatus: "not-needed" },
+  { id: "book-lights-t17", bookUnitId: "book-lights", pages: [264], label: "Varselljus syfte och kombinationsförbud", questionIds: ["book-lights-q17"], visualStatus: "not-needed" },
+  { id: "book-lights-t18", bookUnitId: "book-lights", pages: [265], label: "Kurvljus kontra fjärrljus", questionIds: ["book-lights-q18"], visualStatus: "not-needed" },
+  { id: "book-lights-t19", bookUnitId: "book-lights", pages: [265], label: "Parkeringsljusets syfte och strömsnålhet", questionIds: ["book-lights-q19"], visualStatus: "reviewed" },
+  { id: "book-lights-t20", bookUnitId: "book-lights", pages: [265], label: "Bromsljus starkare än bakljus", questionIds: ["book-lights-q20"], visualStatus: "not-needed" },
+  { id: "book-lights-t21", bookUnitId: "book-lights", pages: [265], label: "Backljus och skyltlykta", questionIds: ["book-lights-q21"], visualStatus: "not-needed" },
+  { id: "book-lights-t22", bookUnitId: "book-lights", pages: [266, 267], label: "Avbländning vid möte, tre steg", questionIds: ["book-lights-q22"], visualStatus: "reviewed" },
+  { id: "book-lights-t23", bookUnitId: "book-lights", pages: [267], label: "Avbländning vid omkörning, fyra steg", questionIds: ["book-lights-q23"], visualStatus: "reviewed" },
+  { id: "book-lights-t24", bookUnitId: "book-lights", pages: [268], label: "Helljus i en kurva", questionIds: ["book-lights-q24"], visualStatus: "reviewed" },
+  { id: "book-lights-t25", bookUnitId: "book-lights", pages: [268], label: "Synlighetsavstånd för gående i mörker", questionIds: ["book-lights-q25"], visualStatus: "not-needed" }
+];
